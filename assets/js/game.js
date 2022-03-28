@@ -3,14 +3,21 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerSouls = 10;
 
+
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Black Shadow";
+var enemyNames = ["Black Shadow", "Amy Android", "Robo Trumble"];
+for(var i = 0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index");
+  }
+
 var enemyHealth = 200;
 var enemyAttack = 60;
 
-var fight = function() {
+var fight = function(enemyName) {
     // Alert players that they are starting the round
     window.alert("Welcome to Demon Souls!");
 
@@ -26,7 +33,7 @@ console.log(
 if (promptFight === "fight" || promptFight === "FIGHT") {
     // remove enemy's health by subtracting the amount set in the playerAttack variable
     enemyHealth = enemyHealth - playerAttack;
-    console.log(
+console.log(
       playerName + " attacked " + enemyName + ". " + enemyName + " now has " + enemyHealth + " health remaining."
     );
   
@@ -39,7 +46,7 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
   
     // remove player's health by subtracting the amount set in the enemyAttack variable
     playerHealth = playerHealth - enemyAttack;
-    console.log(
+console.log(
       enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + " health remaining."
     );
   
@@ -71,4 +78,7 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 }
 };
 
-fight();
+// fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+  }
